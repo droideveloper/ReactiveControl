@@ -45,6 +45,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Reactive.Core">
       <HintPath>..\..\..\..\..\Downloads\System.Reactive.Core.3.1.1\lib\net45\System.Reactive.Core.dll</HintPath>
     </Reference>
@@ -72,6 +73,18 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\AbstractViewModel.cs" />
+    <Compile Include="Common\BuildConfig.cs" />
+    <Compile Include="Common\BusManager.cs" />
+    <Compile Include="Common\EntityType.cs" />
+    <Compile Include="Common\EventType.cs" />
+    <Compile Include="Common\Extensions.cs" />
+    <Compile Include="Common\LogLevel.cs" />
+    <Compile Include="Common\LogType.cs" />
+    <Compile Include="Common\UsecaseType.cs" />
+    <Compile Include="Common\ViewType.cs" />
+    <Compile Include="Net\Extensions.cs" />
+    <Compile Include="Net\HttpResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -101,6 +114,7 @@
     <Compile Include="Rx\Presentation\Frame+Extensions.cs" />
     <Compile Include="Rx\Presentation\FrameworkElement+Extensions.cs" />
     <Compile Include="Rx\Presentation\Image+Extensions.cs" />
+    <Compile Include="Rx\Presentation\TreeView+Extensions.cs" />
     <Compile Include="Rx\Presentation\ListBox+Extensions.cs" />
     <Compile Include="Rx\Presentation\ListBoxItem+Extensions.cs" />
     <Compile Include="Rx\Presentation\MenuItem+Extensions.cs" />
@@ -109,8 +123,11 @@
     <Compile Include="Rx\Presentation\ProgressBar+Extensions.cs" />
     <Compile Include="Rx\Presentation\RangeBase+Extensions.cs" />
     <Compile Include="Rx\Presentation\Selector+Extensions.cs" />
+    <Compile Include="Rx\Presentation\StackPanel+Extensions.cs" />
     <Compile Include="Rx\Presentation\TextBox+Extensions.cs" />
     <Compile Include="Rx\Presentation\UIElement+Extensions.cs" />
+    <Compile Include="Rx\Presentation\Viewbox+Extensions.cs" />
+    <Compile Include="Rx\Presentation\WrapPanel+Extensions.cs" />
     <Compile Include="Rx\UIBindingObserver.cs" />
     <Compile Include="Rx\Variable.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -124,10 +141,6 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
