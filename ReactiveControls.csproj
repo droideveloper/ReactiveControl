@@ -74,6 +74,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\AbstractViewModel.cs" />
+    <Compile Include="Common\ApplicationType.cs" />
+    <Compile Include="Common\BaseObservable.cs" />
     <Compile Include="Common\BuildConfig.cs" />
     <Compile Include="Common\BusManager.cs" />
     <Compile Include="Common\EntityType.cs" />

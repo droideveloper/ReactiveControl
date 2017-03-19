@@ -10,10 +10,8 @@ using System.Windows;
 
 namespace ReactiveWPFUserControl.Common {
 
-	public abstract class AbstractViewModel<TSource>: INotifyPropertyChanged where TSource: ViewType {
+	public abstract class AbstractViewModel<TSource>: BaseObservable where TSource: ViewType {
 		
-		public event PropertyChangedEventHandler PropertyChanged;
-
 		protected readonly DisposeBag dispose = new DisposeBag();
 		protected readonly TSource view;
 
@@ -25,20 +23,6 @@ namespace ReactiveWPFUserControl.Common {
 			this.view.Unload
 				.BindNext(x => OnStop())
 				.DisposeBy(dispose);
-		}
-
-		protected virtual void OnPropertyChanged(string propertyName) {
-			PropertyChangedEventHandler handler = PropertyChanged;
-			if (handler != null) {
-				handler(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-
-		protected bool setProperty<T>(ref T propertyField, T propertyValue, [CallerMemberName] string propertyName = null) {
-			if (EqualityComparer<T>.Default.Equals(propertyField, propertyValue)) {	return false;	}
-			propertyField = propertyValue;
-			OnPropertyChanged(propertyName);
-			return true;
 		}
 
 		protected abstract void OnStart();
