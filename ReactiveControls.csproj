@@ -106,7 +106,10 @@
     <Compile Include="Rx\Presentation\MenuItem+Extensions.cs" />
     <Compile Include="Rx\Presentation\Page+Extensions.cs" />
     <Compile Include="Rx\Presentation\PasswordBox+Extensions.cs" />
+    <Compile Include="Rx\Presentation\ProgressBar+Extensions.cs" />
+    <Compile Include="Rx\Presentation\RangeBase+Extensions.cs" />
     <Compile Include="Rx\Presentation\Selector+Extensions.cs" />
+    <Compile Include="Rx\Presentation\TextBox+Extensions.cs" />
     <Compile Include="Rx\Presentation\UIElement+Extensions.cs" />
     <Compile Include="Rx\UIBindingObserver.cs" />
     <Compile Include="Rx\Variable.cs" />
