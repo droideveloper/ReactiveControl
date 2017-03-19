@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
-namespace ReactiveWPFUserControl.Rx.Presentation {
+namespace ReactiveControls.Rx.Presentation {
 
 	public static class Page_Extensions {
 	

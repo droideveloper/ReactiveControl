@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 
-namespace ReactiveWPFUserControl.Rx.Presentation {
+namespace ReactiveControls.Rx.Presentation {
 
 	public static class Frame_Extensions {
 		

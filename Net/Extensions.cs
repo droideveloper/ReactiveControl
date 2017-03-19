@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace ReactiveWPFUserControl.Net {
+namespace ReactiveControls.Net {
 	
 	public static class Extensions {
 

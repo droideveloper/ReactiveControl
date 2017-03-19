@@ -5,7 +5,7 @@ using System.Text;
 using System.Reactive.Subjects;
 using System.Threading.Tasks;
 
-namespace ReactiveWPFUserControl.Common {
+namespace ReactiveControls.Common {
 		
 	public sealed class BusManager {
 

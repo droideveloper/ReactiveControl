@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 
-namespace ReactiveWPFUserControl.Rx.Presentation {
+namespace ReactiveControls.Rx.Presentation {
 
 	public static class TextBox_Extensions {
 		

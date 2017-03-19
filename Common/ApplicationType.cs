@@ -5,7 +5,7 @@ using System.Text;
 using Ninject;
 using System.Threading.Tasks;
 
-namespace ReactiveWPFUserControl.Common {
+namespace ReactiveControls.Common {
 	
 	public interface ApplicationType {
 

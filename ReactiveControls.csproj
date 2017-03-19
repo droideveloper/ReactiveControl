@@ -58,6 +58,9 @@
     <Reference Include="System.Reactive.PlatformServices">
       <HintPath>..\..\..\..\..\Downloads\System.Reactive.PlatformServices.3.1.1\lib\net45\System.Reactive.PlatformServices.dll</HintPath>
     </Reference>
+    <Reference Include="System.Reactive.Windows.Threading">
+      <HintPath>..\..\..\..\..\Downloads\System.Reactive.Windows.Threading.3.1.1\lib\net45\System.Reactive.Windows.Threading.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Presentation" />
     <Reference Include="System.Xml" />

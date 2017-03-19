@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls.Primitives;
 
-namespace ReactiveWPFUserControl.Rx.Presentation {
+namespace ReactiveControls.Rx.Presentation {
 
 	public static class RangeBase_Extensions {
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net;
 
-namespace ReactiveWPFUserControl.Net {
+namespace ReactiveControls.Net {
 	
 	public sealed class HttpResponse<T> {
 

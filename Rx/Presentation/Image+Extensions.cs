@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace ReactiveWPFUserControl.Rx.Presentation {
+namespace ReactiveControls.Rx.Presentation {
 
 	public static class Image_Extensions {
 

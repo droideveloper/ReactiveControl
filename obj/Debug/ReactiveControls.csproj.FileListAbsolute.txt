@@ -1,6 +1,3 @@
-C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl\obj\Debug\ReactiveWPFUserControl.Properties.Resources.resources
-C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl\obj\Debug\ReactiveControls.csproj.GenerateResource.Cache
-C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl\obj\Debug\ReactiveControls.csprojResolveAssemblyReference.cache
 C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl\bin\Debug\ReactiveWPFUserControl.dll
 C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl\bin\Debug\ReactiveWPFUserControl.pdb
 C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl\bin\Debug\Newtonsoft.Json.dll
@@ -10,6 +7,7 @@ C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\R
 C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl\bin\Debug\System.Reactive.Interfaces.dll
 C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl\bin\Debug\System.Reactive.Linq.dll
 C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl\bin\Debug\System.Reactive.Windows.Threading.dll
 C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl\bin\Debug\Ninject.xml
 C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl\bin\Debug\Refit.pdb
@@ -17,5 +15,8 @@ C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\R
 C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl\bin\Debug\System.Reactive.Interfaces.xml
 C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl\bin\Debug\System.Reactive.Linq.xml
 C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl\bin\Debug\System.Reactive.PlatformServices.xml
+C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl\bin\Debug\System.Reactive.Windows.Threading.xml
+C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl\obj\Debug\ReactiveWPFUserControl.Properties.Resources.resources
+C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl\obj\Debug\ReactiveControls.csproj.GenerateResource.Cache
 C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl\obj\Debug\ReactiveWPFUserControl.dll
 C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl\obj\Debug\ReactiveWPFUserControl.pdb

@@ -7,7 +7,7 @@ using ReactiveControls.Rx;
 using System.Windows;
 using System.Reactive.Linq;
 
-namespace ReactiveWPFUserControl.Rx.Presentation {
+namespace ReactiveControls.Rx.Presentation {
 
 	public static class UIElement_Extensions {
 

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace ReactiveWPFUserControl.Common {
+namespace ReactiveControls.Common {
 	
 	public interface ViewType {
 
