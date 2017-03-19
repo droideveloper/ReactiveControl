@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reactive.Linq;
 using System.Reactive.Concurrency;
+using System.Windows.Threading;
 
 namespace ReactiveControls.Rx {
 	
@@ -13,7 +14,7 @@ namespace ReactiveControls.Rx {
 		private readonly IObservable<TSource> events;
 
 		public ControlEvent(IObservable<TSource> events) {
-			this.events = events.SubscribeOn(CurrentThreadScheduler.Instance);
+			this.events = events.SubscribeOnDispatcher(DispatcherPriority.Render);
 		}
 
 		public IDisposable Subscribe(IObserver<TSource> observer) {

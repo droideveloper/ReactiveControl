@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+
 using System.Reactive.Linq;
 using System.Reactive.Concurrency;
+using System.Reactive.Threading;
+using System.Windows.Threading;
 
 namespace ReactiveControls.Rx {
 
@@ -20,7 +24,7 @@ namespace ReactiveControls.Rx {
 		private readonly IObserver<TSource> valueSink;
 		
 		public ControlProperty(IObservable<TSource> values, IObserver<TSource> valueSink) {
-			this.values = values.SubscribeOn(CurrentThreadScheduler.Instance);
+			this.values = values.SubscribeOnDispatcher(DispatcherPriority.Render);
 			this.valueSink = valueSink;
 		}
 
