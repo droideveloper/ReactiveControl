@@ -8,7 +8,7 @@ namespace ReactiveControls.Common {
 	
 	public static class Extensions {
 
-		public static string ToString(this LogLevel level) {
+		public static string ToLogString(this LogLevel level) {
 			switch(level) {
 				case LogLevel.DEBUG:
 					return "D/";
@@ -37,7 +37,7 @@ namespace ReactiveControls.Common {
 
 		public static void Log<TSource>(this TSource type, LogLevel level, string message) where TSource: LogType {
 			if (type.isLogEnabled()) {
-				Console.WriteLine("{0}{1}: {2}", level.ToString(), type.getClassTag(), message);
+				Console.WriteLine("{0}{1}: {2}", level.ToLogString(), type.getClassTag(), message);
 			}
 		}
 	}
