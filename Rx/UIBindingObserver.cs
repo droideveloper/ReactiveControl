@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Threading;
 
 namespace ReactiveControls.Rx {
 
@@ -23,7 +26,18 @@ namespace ReactiveControls.Rx {
 		}
 
 		public void OnNext(TSource value) {
-			binding(control, value);
+			Dispatcher dispatcher = Dispatcher.FromThread(Thread.CurrentThread);
+			Application application = Application.Current;
+			if (application != null) {
+				Dispatcher UIDispatcher = application.Dispatcher;
+				if (dispatcher == UIDispatcher) {
+					binding(control, value);
+				} else {
+					UIDispatcher.BeginInvoke(() => {
+						OnNext(value);
+					});
+				}
+			}
 		}
 
 		public IObserver<TSource> AsObserver() {

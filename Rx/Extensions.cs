@@ -15,15 +15,11 @@ namespace ReactiveControls.Rx {
 	public static class Extensions {
 
 		public static IDisposable BindTo<TSource>(this IObservable<TSource> source, IObserver<TSource> observer) {
-			return source
-				.ObserveOnDispatcher(DispatcherPriority.Render)
-				.Subscribe(observer);
+			return source.Subscribe(observer);
 		}
 
 		public static IDisposable BindNext<TSource>(this IObservable<TSource> source, Action<TSource> bindNext) {
-			return source
-				.ObserveOnDispatcher(DispatcherPriority.Render)
-				.Subscribe(bindNext);
+			return source.Subscribe(bindNext);
 		}
 
 		public static void DisposeBy(this IDisposable source, DisposeBag dispose) {

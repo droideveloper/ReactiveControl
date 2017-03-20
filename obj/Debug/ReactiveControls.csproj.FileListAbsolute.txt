@@ -20,3 +20,4 @@ C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\R
 C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl\obj\Debug\ReactiveControls.csproj.GenerateResource.Cache
 C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl\obj\Debug\ReactiveWPFUserControl.dll
 C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl\obj\Debug\ReactiveWPFUserControl.pdb
+C:\Users\Fatih Şen\Frameworks\NET_Worskapces\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl_Workspace\ReactiveWPFUserControl\obj\Debug\ReactiveControls.csprojResolveAssemblyReference.cache
