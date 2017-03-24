@@ -8,15 +8,17 @@ namespace ReactiveControls.Rx {
 	
 	public sealed class DisposeBag {
 
-		private readonly List<IDisposable> disposeCollection = new List<IDisposable>();
-	
+		private readonly CompositeDisposable disposeCollection = new CompositeDisposable();
+
 		public void AddDisposable(IDisposable disposable) {
 			disposeCollection.Add(disposable);
 		}
 
 		~DisposeBag() {
-			disposeCollection.ForEach(x => x.Dispose());
 			disposeCollection.Clear();
+			if(!disposeCollection.IsDisposed) {
+				disposeCollection.Dispose();
+			}
 		}
 	}
 }
