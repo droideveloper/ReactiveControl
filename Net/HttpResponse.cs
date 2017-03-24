@@ -8,16 +8,11 @@ using System.Net;
 
 namespace ReactiveControls.Net {
 	
-	public sealed class HttpResponse<T> {
+	public sealed class HttpResponse<TSource> {
 
-		public HttpStatusCode StatusCode {	get; set;	}
-		public T DataSet { get; set; }
-		public string Reason { get; set; }
+		public TSource Content;
+		public HttpStatusCode Code;
+		public string ReasonPhrase;
 
-		public bool IsSuccess {
-			get {
-				return StatusCode == HttpStatusCode.OK;
-			}
-		}
 	}
 }
