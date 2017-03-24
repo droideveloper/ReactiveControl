@@ -12,27 +12,49 @@ namespace ReactiveControls.Net {
 	
 	public static class Extensions {
 
-		public static IObservable<HttpResponse<TSource>> ToHttpResponse<TSource>(this IObservable<HttpResponseMessage> source, JsonSerializerSettings settings = null) {
-			settings = settings ?? defaultSettings;
-			return source.Select(response => {
-				if (response.IsSuccessStatusCode) {
-					var jsonString = response.Content.ReadAsStringAsync().Result;
-					var dataSource = JsonConvert.DeserializeObject<TSource>(jsonString, settings);
-					return new HttpResponse<TSource>() {
-						StatusCode = response.StatusCode,
-						DataSet = dataSource
-					};
+		private static readonly int BUFFER = 8192;
+
+		private static readonly HttpClient httpClient = new HttpClient();
+
+		private static readonly JsonSerializerSettings defaultSettings = new JsonSerializerSettings() {
+			ContractResolver = new CamelCasePropertyNamesContractResolver()
+		};
+
+		public static IObservable<HttpResponse<TSource>> ToResponse<TSource>(this IObservable<HttpResponseMessage> source, JsonSerializerSettings settings = null) {
+			return source.SelectMany(r => {
+				if (r.StatusCode == HttpStatusCode.OK) {
+					return Observable.FromAsync(async () => {
+						settings = settings ?? defaultSettings;
+						StringBuilder str = new StringBuilder();
+						Stream input = await r.Content.ReadAsStreamAsync();
+						using(BinaryReader binaryReader = new BinaryReader(input)) {
+							byte[] buffer = new byte[BUFFER];
+							int read;
+							while((read = binaryReader.Read(buffer, 0, BUFFER)) != 0) {
+								str.Append(Encoding.UTF8.GetString(buffer, 0, read));
+							}
+						}
+						TSource content = JsonConvert.DeserializeObject<TSource>(str.ToString(), settings);
+						HttpResponse<TSource> successResponse = new HttpResponse<TSource>() {
+							Code = r.StatusCode,
+							Content = content
+						};
+						return successResponse;
+					});
 				} else {
-					return new HttpResponse<TSource>() {
-						StatusCode = response.StatusCode,
-						Reason = response.ReasonPhrase
+					HttpResponse<TSource> errorResponse = new HttpResponse<TSource>() {
+						Code = r.StatusCode,
+						ReasonPhrase = r.ReasonPhrase
 					};
+					return Observable.Return(errorResponse);
 				}
 			});
 		}
 
-		private static JsonSerializerSettings defaultSettings = new JsonSerializerSettings() {
-			ContractResolver = new CamelCasePropertyNamesContractResolver()
-		};
+		public static IObservable<Stream> ToBinary(this Uri source) {
+			return Observable.FromAsync(async () => {
+				return await httpClient.GetStreamAsync(source);
+			});
+		}
 	}
 }
