@@ -2,22 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Reactive.Disposables;
 using System.Threading.Tasks;
 
 namespace ReactiveControls.Rx {
 	
 	public sealed class DisposeBag {
 
-		private readonly CompositeDisposable disposeCollection = new CompositeDisposable();
+		private readonly CompositeDisposable disposes = new CompositeDisposable();
 
-		public void AddDisposable(IDisposable disposable) {
-			disposeCollection.Add(disposable);
+		public void Add(IDisposable dispose) {
+			if (dispose != null && !disposes.Contains(dispose)) {
+				disposes.Add(dispose);
+			}
 		}
 
 		~DisposeBag() {
-			disposeCollection.Clear();
-			if(!disposeCollection.IsDisposed) {
-				disposeCollection.Dispose();
+			if (!disposes.IsDisposed) {
+				disposes.Clear();
+				disposes.Dispose();
 			}
 		}
 	}
