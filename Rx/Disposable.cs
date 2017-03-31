@@ -7,11 +7,11 @@ using System.Reactive.Subjects;
 
 namespace ReactiveControls.Rx {
 
-	public sealed class Destructable {
+	public sealed class Disposable {
 
-		public readonly ReplaySubject<Destructable> DestroyedSink = new ReplaySubject<Destructable>(1);
+		public readonly ReplaySubject<Disposable> DestroyedSink = new ReplaySubject<Disposable>(1);
 	
-		~Destructable() {
+		~Disposable() {
 			DestroyedSink.OnNext(this);
 			DestroyedSink.OnCompleted();
 		}
