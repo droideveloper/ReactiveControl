@@ -15,6 +15,12 @@ namespace ReactiveControls.Rx {
 		private readonly Action<UIControl, TSource> binding;
 
 		public UIBindingObserver(UIControl control, Action<UIControl, TSource> binding) {
+			if (control == null) {
+				throw new ArgumentNullException("control can not be null");
+			}
+			if (binding == null) {
+				throw new ArgumentNullException("binding can not be null");	
+			}
 			this.control = control;
 			this.binding = binding;
 		}
@@ -26,18 +32,15 @@ namespace ReactiveControls.Rx {
 		}
 
 		public void OnNext(TSource value) {
-			Dispatcher dispatcher = Dispatcher.FromThread(Thread.CurrentThread);
-			Application application = Application.Current;
-			if (application != null) {
-				Dispatcher UIDispatcher = application.Dispatcher;
-				if (dispatcher == UIDispatcher) {
-					binding(control, value);
-				} else {
-					UIDispatcher.BeginInvoke(() => {
-						OnNext(value);
-					});
-				}
-			}
+			Dispatcher currentDispatcher = Dispatcher.FromThread(Thread.CurrentThread);
+			Dispatcher mainDispatcher = Application.Current.Dispatcher;
+			if (currentDispatcher != mainDispatcher) {
+				mainDispatcher.BeginInvoke(() => {
+					OnNext(value);
+				});
+			} else {
+				binding(control, value);
+			}			
 		}
 
 		public IObserver<TSource> AsObserver() {
