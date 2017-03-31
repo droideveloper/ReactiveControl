@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Reactive.Linq;
-using System.Reactive.Threading;
-using System.Windows.Controls.Primitives;
+using System.Reactive.Linq;
 using System.Windows.Threading;
+using System.Reactive.Concurrency;
 
 namespace ReactiveControls.Rx {
 
 	public static class Extensions {
+
+		public static IObservable<TSource> Async<TSource>(this IObservable<TSource> source) {
+			return source.SubscribeOn(TaskPoolScheduler.Default)
+				.ObserveOnDispatcher(DispatcherPriority.Render);
+		}
 
 		public static IDisposable BindTo<TSource>(this IObservable<TSource> source, IObserver<TSource> observer) {
 			return source.Subscribe(observer);
@@ -22,8 +27,11 @@ namespace ReactiveControls.Rx {
 			return source.Subscribe(bindNext);
 		}
 
-		public static void DisposeBy(this IDisposable source, DisposeBag dispose) {
-			dispose.AddDisposable(source);
+		public static void DisposeBy(this IDisposable source, DisposeBag disposes) {
+			if (disposes == null) {
+				throw new ArgumentNullException("disposes can not be null");
+			} 
+			disposes.Add(source);
 		}
 	}
 }
